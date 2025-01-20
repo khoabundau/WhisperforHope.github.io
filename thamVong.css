@@ -1,0 +1,304 @@
+/* Ensure the p5.js canvas stays behind all other content */
+#sketch-container {
+  position: fixed; /* Fix the position of the canvas */
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  z-index: -1; /* Ensure the canvas is below other content */
+}
+
+body {
+  position: relative;
+  width: 100%;
+  height: 100%; /* Keep the body height at 100% */
+  background-color: #d3d3d3;
+  overflow-x: hidden;
+  overflow-y: auto; /* Enable scrolling */
+  margin: 0; /* Remove default margin */
+  padding: 0;
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Hide the scrollbar */
+body::-webkit-scrollbar {
+  width: 0; /* Hide the vertical scrollbar */
+}
+
+body::-webkit-scrollbar-thumb {
+  background: transparent; /* Make the scrollbar thumb invisible */
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent; /* Make the scrollbar track invisible */
+}
+
+.sound-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0); /* Semi-transparent black background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100000; /* Ensure it's on top of all other content */
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+  cursor: pointer;
+}
+
+.thamAllow {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  filter: blur(0.547vw);
+}
+
+.thamHeading {
+  position: absolute;
+  width: 78.828vw;
+  height: 24.167vh;
+  top: 25.764vh;
+  left: 15.391vw;
+  font-family: "loretta", serif;
+  font-weight: 300;
+  color: #ffffff;
+  font-size: 11.719vw;
+  text-align: center;
+  letter-spacing: 9.492vw;
+  line-height: normal;
+}
+
+.thamMessage {
+  position: absolute;
+  width: 39.18vw;
+  height: 8.611vh;
+  top: 65.972vh;
+  left: 30.391vw;
+  font-family: "loretta", serif;
+  font-weight: 400;
+  color: #d3d3d3;
+  font-size: 0.938vw;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 4.278vh;
+}
+
+.frame {
+  height: 100vh; /* Full viewport height */
+  width: 100%; /* Full width */
+  background-color: transparent;
+  position: relative;
+  z-index: 1; /* Ensure it stays on top of the canvas */ /* Make room for frame2 to appear below */
+}
+
+.image {
+  position: fixed;
+  width: 114.766vw;
+  height: 204.028vh;
+  top: -52.014vh;
+  left: -7.383vw;
+}
+/* Ensure initial opacity is 1 */
+.xoayThamVong,
+.text-wrapper-4 {
+  opacity: 1;
+  transition: opacity 0.5s ease; /* Smooth transition for opacity */
+}
+
+/* You can add other CSS rules here if needed */
+
+.xoayThamVong {
+  position: absolute;
+  width: 69.688vw;
+  height: 136.111vh;
+  left: 15.156vw;
+  top: -24.375vh;
+}
+.text-wrapper {
+  height: 30.139vh;
+  top: 12.222vh;
+  left: 44.336vw;
+  font-size: 11.719vw;
+  position: fixed;
+  font-family: "Mochiy Pop One", serif;
+  font-weight: 400;
+  color: #d3d3d3;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  text-align: center;
+  transition: color 0.5s ease;
+}
+.text-wrapper.active {
+  color: #d3d3d3; /* New color when active */
+}
+
+.div {
+  height: 10.069vh;
+  width: 3.906vw;
+  top: 77.708vh;
+  left: 48.047vw;
+  font-size: 3.906vw; /* Default font size */
+  position: fixed;
+  font-family: "Mochiy Pop One", serif;
+  font-weight: 400;
+  color: #d3d3d3;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  transition: all 1.2s ease; /* Smooth transition */
+}
+
+.div.active {
+  width: 11.719vw; /* New width */
+  height: 30.139vh; /* New height */
+  left: 44.141vw; /* New horizontal position */
+  top: 54.653vh; /* New vertical position */
+  font-size: 11.719vw; /* New font size */
+}
+.text-wrapper-2 {
+  position: fixed;
+  height: 5.139vh;
+  width: 12.93vw;
+  top: 87.431vh;
+  left: 8.398vw;
+  font-family: "loretta", serif;
+  font-weight: 300;
+  color: #ffffff;
+  font-size: 2.5vw;
+  text-align: center;
+  letter-spacing: 1.75vw;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.text-wrapper-3 {
+  position: fixed;
+  height: 5.139vh;
+  width: 12.539vw;
+  top: 87.431vh;
+  left: 79.063vw;
+  font-family: "loretta", serif;
+  font-weight: 300;
+  color: #ffffff;
+  font-size: 2.5vw;
+  text-align: center;
+  letter-spacing: 1.75vw;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.text-wrapper-4 {
+  position: absolute;
+  width: 6.289vw;
+  height: 2.917vh;
+  top: 58.194vh;
+  left: 46.836vw;
+  font-family: "loretta", serif;
+  font-weight: 600;
+  color: #d3d3d3;
+  font-size: 1.406vw;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+  transition: all 0.5s ease; /* Smooth transition */
+}
+.text-wrapper-4 .active {
+  top: 48.542vh; /* New vertical position when active */
+  left: 46.406vw; /* New horizontal position when active */
+  font-size: 2vw; /* Increase font size for effect */
+}
+.riA {
+  position: fixed;
+  width: 2.07vw;
+  height: 7.014vh;
+  top: 8.472vh;
+  left: 89.492vw;
+  z-index: 9999; /* Make sure it's on top */
+}
+
+.leA {
+  position: fixed;
+  width: 2.07vw;
+  height: 7.014vh;
+  top: 8.472vh;
+  left: 8.359vw;
+  cursor: pointer;
+  z-index: 9999; /* Make sure it's on top */
+}
+
+.a-m-b-i-t-i-o-n {
+  position: fixed;
+  width: 2.461vw;
+  height: 69.028vh;
+  top: 17.222vh;
+  left: 89.453vw;
+  font-family: "loretta", serif;
+  font-weight: 300;
+  color: #ffffff;
+  font-size: 2.5vw;
+  text-align: center;
+
+  line-height: 8.181vh;
+}
+
+.a-m-b-i-t-i-o-n-2 {
+  position: fixed;
+  width: 2.461vw;
+  height: 69.028vh;
+  top: 17.222vh;
+  left: 8.008vw;
+  font-family: "loretta", serif;
+  font-weight: 300;
+  color: #ffffff;
+  font-size: 2.5vw;
+  text-align: center;
+  line-height: 8.181vh;
+}
+
+.frame,
+.frame2 {
+  position: relative;
+  z-index: 1; /* Ensure frames are above the canvas */
+  width: 100%;
+  min-height: 100vh; /* Ensure frames are tall enough to scroll */
+}
+.frame2 {
+  padding-top: 11.736vh;
+  background-color: transparent;
+  width: 100%;
+  position: relative; /* Position frame2 below frame */
+  opacity: 0;
+  pointer-events: none; /* Prevent interaction when not visible */
+  z-index: 1; /* Keep it below frame */
+  transition: opacity 0.5s ease;
+}
+
+.frame2 .div2 {
+  background-color: transparent;
+  position: relative;
+  pointer-events: none;
+}
+.frame2 .at-the-cusp-of {
+  position: absolute;
+  width: 100.664vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  font-family: "loretta", serif;
+  font-weight: 300;
+  font-style: italic;
+  color: #ffffff;
+  font-size: 0.938vw;
+  text-align: justify;
+  text-justify: inter-word;
+  letter-spacing: 0;
+  line-height: 3.417vh;
+  opacity: 70%;
+}

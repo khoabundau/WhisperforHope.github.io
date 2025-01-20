@@ -1,0 +1,271 @@
+/* Default hidden state for scroll elements */
+[data-scroll] {
+  opacity: 0; /* Fully transparent */
+  transform: translateY(20px); /* Slight downward offset */
+  transition: opacity 0.6s ease, transform 0.6s ease; /* Smooth transition */
+}
+
+/* Visible state when the element comes into view */
+[data-scroll].visible {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Original position */
+}
+
+/* Add your existing CSS here */
+body {
+  position: relative;
+  width: 100%;
+  height: 100%; /* Keep the body height at 100% */
+  background-color: #d3d3d3;
+  overflow-x: hidden;
+  overflow-y: auto; /* Enable scrolling */
+  margin: 0; /* Remove default margin */
+  padding: 0;
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Hide the scrollbar */
+body::-webkit-scrollbar {
+  width: 0; /* Hide the vertical scrollbar */
+}
+
+body::-webkit-scrollbar-thumb {
+  background: transparent; /* Make the scrollbar thumb invisible */
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent; /* Make the scrollbar track invisible */
+}
+#sound-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+  visibility: visible;
+  opacity: 1;
+  cursor: pointer;
+}
+
+#sound-overlay.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+.intro {
+  position: absolute;
+  width: 103.711vw;
+  height: 22.778vh;
+  top: 38.542vh;
+  left: -1.875vw;
+  font-family: "loretta", serif;
+  font-weight: 400;
+  color: #d3d3d3;
+  font-size: 2.5vw;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 11.403vh;
+}
+.overlay-text {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  color: white;
+  font-family: "loretta", serif;
+  font-size: 1.875vw;
+  text-align: center;
+}
+
+#sketch-container canvas {
+  z-index: -1; /* Đặt canvas bên dưới nội dung */
+  position: fixed; /* Cố định canvas khi cuộn trang */
+  top: 0;
+  left: 0;
+}
+
+/* Add your other existing CSS rules here */
+
+@keyframes moveUpDown {
+  0%,
+  100% {
+    transform: translateY(0); /* Original position */
+  }
+  50% {
+    transform: translateY(1.2vh); /* Move up by 1vh */
+  }
+}
+
+.frame .scrollXuong {
+  position: absolute;
+  height: 8.402777778vh;
+  width: 3.945vw;
+  top: 88.125vh;
+  left: 48.008vw;
+  animation: moveUpDown 1.5s ease-in-out infinite; /* Add animation */
+}
+.scrollXuong:hover {
+  cursor: pointer;
+}
+.introPic {
+  position: absolute;
+  width: 103.984vw;
+  left: -1.992vw;
+  height: 104.0277778vh;
+  top: 100vh;
+  opacity: 0.3;
+  filter: blur(15px);
+  transition: filter 1.2s ease;
+}
+
+.frame .text-wrapper {
+  width: 50.391vw;
+  left: 8.398vw;
+  height: 23.33333333vh;
+  top: 107.9861111vh;
+  position: absolute;
+  font-family: "loretta", serif;
+  font-weight: 300;
+  font-style: italic;
+  color: #d3d3d3;
+  font-size: 1.875vw;
+  letter-spacing: 0;
+  line-height: 4.3125vh;
+}
+
+.by-turning-these {
+  position: absolute;
+  width: 32.813vw;
+  left: 58.789vw;
+  height: 23.33333333vh;
+  top: 150.0694444vh;
+  font-family: "loretta", serif;
+  font-weight: 300;
+  font-style: italic;
+  color: #d3d3d3;
+  font-size: 1.875vw;
+  letter-spacing: 0;
+  line-height: 4.3125vh;
+}
+
+.text-wrapper-R,
+.text-wrapper-W {
+  font-family: "loretta", serif;
+  font-weight: 700;
+  font-style: italic;
+}
+.frame .div {
+  position: absolute;
+  width: 28.008vw;
+  height: 3.888888889vh;
+  top: 186.7361111vh;
+  left: 58.008vw;
+  font-family: "loretta", serif;
+  font-weight: 500;
+  font-style: italic;
+  color: #d3d3d3;
+  font-size: 1.875vw;
+  text-align: right;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.union-3 {
+  position: absolute;
+  width: 1.133vw;
+  height: 3.819444444vh;
+  top: 186.1805556vh;
+  left: 86.875vw;
+}
+
+.union-4 {
+  position: absolute;
+  width: 1.586vw;
+  height: 5.347222222vh;
+  top: 185.4166667vh;
+  left: 88.086vw;
+}
+
+.union-5 {
+  position: absolute;
+  width: 2.084vw;
+  height: 7.013888889vh;
+  top: 184.5833333vh;
+  left: 89.531vw;
+}
+/* Add styles for the hover target */
+/* Add styles for the hover target */
+.text-wrapper-2,
+.text-wrapper-3,
+.text-wrapper-4 {
+  position: absolute;
+  width: 49.336vw;
+  height: 24.167vh;
+  font-family: "loretta", serif;
+  font-weight: 300;
+  font-style: italic;
+  color: #000000;
+  font-size: 11.719vw;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  transition: top 0.3s ease, left 0.3s ease; /* Add smooth transition */
+}
+
+.text-wrapper-2 {
+  top: 21.85vh;
+  left: 19.531vw;
+}
+
+.text-wrapper-3 {
+  top: 40.13888889vh;
+  left: 13.477vw;
+}
+
+.text-wrapper-4 {
+  top: 44.375vh;
+  left: 37.188vw;
+  font-weight: 700;
+}
+
+/* Apply hover effect to .text-wrapper-2 that affects all texts differently */
+.text-wrapper-2:hover,
+.text-wrapper-2:hover ~ .text-wrapper-3,
+.text-wrapper-2:hover ~ .text-wrapper-4 {
+  cursor: pointer;
+  top: 4.513888889vh; /* Change this value to the desired top position on hover */
+  left: 5.234vw; /* Change this value to the desired left position on hover */
+  font-style: normal;
+}
+
+.text-wrapper-2:hover ~ .text-wrapper-3 {
+  top: 37.91666667vh; /* Your original desired top position */
+  left: 25.781vw; /* Your original desired left position */
+  font-style: normal;
+}
+
+.text-wrapper-2:hover ~ .text-wrapper-4 {
+  top: 63.95833333vh; /* Your original desired top position */
+  left: 50.195vw; /* Your original desired left position */
+  font-style: normal;
+}
+.hover-area {
+  position: absolute;
+  width: 22.008vw;
+  height: 3.888888889vh;
+  top: 186.7361111vh;
+  left: 58.008vw;
+  z-index: 10; /* Ensure it is clickable and above other content */
+}
+/* Remove blur effect on hover */
+.hover-area:hover + .introPic {
+  filter: none; /* Displays the element when hovering over .hover-area */
+}
+
+.frame .div:hover {
+  opacity: 0.5; /* Adjust the opacity to your preference */
+}

@@ -1,0 +1,269 @@
+/* Default hidden state for scroll elements */
+[data-scroll] {
+  opacity: 0; /* Fully transparent */
+  transform: translateY(20px); /* Slight downward offset */
+  transition: opacity 0.6s ease, transform 0.6s ease; /* Smooth transition */
+}
+
+/* Visible state when the element comes into view */
+[data-scroll].visible {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Original position */
+}
+
+#sketch-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* Ensure it's behind all other content */
+  background: transparent; /* Ensure the canvas is visible */
+}
+
+/* Body setup */
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #d3d3d3;
+  overflow-x: hidden;
+  overflow-y: auto; /* Enable scrolling */
+  margin: 0; /* Remove default margin */
+  padding: 0;
+}
+
+/* Hide the scrollbar */
+body::-webkit-scrollbar {
+  width: 0; /* Hide the vertical scrollbar */
+}
+
+body::-webkit-scrollbar-thumb {
+  background: transparent; /* Make the scrollbar thumb invisible */
+}
+
+body::-webkit-scrollbar-track {
+  background: transparent; /* Make the scrollbar track invisible */
+}
+
+.sound-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0); /* Semi-transparent black background */
+  z-index: 100000; /* Ensure it's on top of all other content */
+  justify-content: ce;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+  cursor: pointer;
+}
+
+.khoiAllow {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  filter: blur(0.547vw);
+}
+
+.khoiHeading {
+  position: absolute;
+  width: 78.828vw;
+  height: 24.167vh;
+  top: 25.764vh;
+  left: 15.04vw;
+  font-family: "loretta", serif;
+  font-weight: 300;
+  color: #ffffff;
+  font-size: 11.719vw;
+  text-align: center;
+  letter-spacing: 9.492vw;
+  line-height: normal;
+}
+
+.khoiMessage {
+  position: absolute;
+  width: 39.18vw;
+  height: 8.611vh;
+  top: 65.972vh;
+  left: 30.391vw;
+  font-family: "loretta", serif;
+  font-weight: 400;
+  color: #d3d3d3;
+  font-size: 0.938vw;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: 4.278vh;
+}
+
+/* Frame styling */
+.frame,
+.frame2 {
+  position: relative;
+  z-index: 1; /* Ensure frames are above the canvas */
+  width: 100%;
+  min-height: 100vh; /* Ensure frames are tall enough to scroll */
+  pointer-events: auto;
+}
+
+/* Frame1 - First Page Content */
+.frame {
+  background-color: transparent; /* Make it transparent so canvas shows through */
+}
+
+/* Text and image content in frame1 */
+.text-wrapper {
+  position: absolute;
+  width: 49.336vw;
+  height: 3.889vh;
+  top: 72.5vh;
+  left: 25.195vw;
+  font-family: "loretta", serif;
+  font-weight: 300;
+  font-style: italic;
+  color: #000000;
+  font-size: 0.938vw;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+.hi {
+  position: fixed;
+  width: 55.547vw;
+  height: 98.75vh;
+  top: 0.625vh;
+  left: 22.227vw;
+}
+
+.text-wrapper-2 {
+  position: absolute;
+  top: 24.444vh;
+  left: 46.797vw;
+  background-blend-mode: hard-light;
+  font-family: "loretta", serif;
+  font-weight: 600;
+  color: #d3d3d3;
+  font-size: 1.406vw;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.text-wrapper-3 {
+  position: fixed;
+  width: 11.719vw;
+  height: 30.139vh;
+  top: 33.819vh;
+  left: 44.18vw;
+  font-family: "Mochiy Pop One", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #d3d3d3;
+  font-size: 11.719vw;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.text-wrapper-4 {
+  position: fixed;
+  top: 9.375vh;
+  left: 39.648vw;
+  background-blend-mode: hard-light;
+  font-family: "loretta", serif;
+  font-weight: 300;
+  color: #000000;
+  font-size: 2.5vw;
+  text-align: center;
+  letter-spacing: 1.75vw;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.text-wrapper-5 {
+  position: fixed;
+  top: 87.431vh;
+  left: 35.977vw;
+  background-blend-mode: hard-light;
+  font-family: "loretta", serif;
+  font-weight: 300;
+  color: #000000;
+  font-size: 2.5vw;
+  text-align: center;
+  letter-spacing: 1.75vw;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.riA {
+  position: fixed;
+  width: 2.07vw;
+  height: 7.014vh;
+  top: 8.472vh;
+  left: 89.492vw;
+  z-index: 10000;
+}
+
+.leA {
+  position: fixed;
+  width: 2.07vw;
+  height: 7.014vh;
+  top: 8.472vh;
+  left: 8.359vw;
+  cursor: pointer;
+  z-index: 9999; /* Make sure it's on top */
+  pointer-events: all; /* Ensure it's clickable */
+}
+
+/* Frame2 - Second Page Content */
+.frame2 {
+  background-color: transparent; /* Ensure no background color */
+  min-height: 100vh; /* Make it tall enough to scroll */
+  opacity: 1; /* Fully visible */
+  z-index: -1; /* Lower than the arrows to avoid overlap */
+  pointer-events: none;
+}
+
+.frame2 .div2 {
+  background-color: transparent; /* Ensure no background color */
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  pointer-events: none;
+}
+
+/* Ensure text and other content in frame2 stay above the canvas */
+.in-a-burgeoning {
+  position: absolute;
+  width: 21.25vw;
+  height: 73.333vh;
+  top: 16.066vh;
+  left: 8.438vw;
+  font-family: "loretta", serif;
+  font-weight: 300;
+  font-style: italic;
+  color: #000000;
+  font-size: 0.938vw;
+  letter-spacing: 0.112vw;
+  line-height: 2.326vh;
+}
+
+.frame2 .these-dreams-are-the {
+  position: absolute;
+  width: 21.25vw;
+  height: 73.333vh;
+  top: 16.066vh;
+  left: 70.352vw;
+  font-family: "loretta", serif;
+  font-weight: 300;
+  font-style: italic;
+  color: #000000;
+  font-size: 0.938vw;
+  text-align: right;
+  letter-spacing: 0.112vw;
+  line-height: 2.326vh;
+}

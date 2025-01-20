@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://use.typekit.net/aad5gad.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Loretta+Display&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Whisper for HOPE</title>
+    <link rel="stylesheet" href="Main.css" />
+    <script src="Main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js-sound/1.4.0/p5.sound.js"></script>
+    <script src="Main2.js"></script>
+    <!-- If needed, but only if the logic isn't in sketch.js -->
+  </head>
+  <body>
+    <div id="sound-overlay">
+      <div class="overlay-text">
+        <p class="intro">
+          PLEASE USE FULL SCREEN AND HEADPHONES FOR BETTER EXPERIENCE<br />CLICK
+          TO ALLOW SOUND
+        </p>
+      </div>
+    </div>
+    <!-- Container for the p5.js sketch -->
+    <div id="sketch-container"></div>
+
+    <!-- Nội dung HTML của bạn -->
+    <div class="frame">
+      <img class="scrollXuong" src="assets/scrollXuong.png" id="scrollButton" />
+      <div class="hover-area"></div>
+      <img class="introPic" src="assets/IntroPicMain.png" data-scroll />
+      <div class="div" data-scroll>CLICK TO EXPLORE</div>
+      <p class="text-wrapper" data-scroll="">
+        We, the residents, live amidst the lack of infrastructure and whisper
+        our concerns daily. These whispers have transformed into a symbol of our
+        neighborhood. Whispers find their way into articles, appear on social
+        media, and seep into the lives of everyone living here. The whispers
+        have become something special, defining Nguyễn Duy Trinh Street in a
+        unique way.
+      </p>
+      <p class="by-turning-these" data-scroll id="target-section">
+        <span class="span"
+          >By turning these whispers into visual and auditory experiences,
+        </span>
+        <span class="text-wrapper-W">“Whispers For HOPE”</span>
+        <span class="span">
+          will guide you on a journey from the past to the present, exploring
+          the essence of the Nguyễn Duy Trinh street -
+        </span>
+        <span class="text-wrapper-R">“ROAD OF DEATH”</span>
+      </p>
+      <a href="Khoi.html">
+        <img class="union-3" src="assets/SmallestArrow.png" data-scroll />
+      </a>
+      <a href="Khoi.html">
+        <img class="union-4" src="assets/MediumArrow.png" data-scroll />
+      </a>
+      <a href="Khoi.html">
+        <img class="union-5" src="assets/RightTrang.png" data-scroll />
+      </a>
+      <div class="text-wrapper-2">Whisper</div>
+      <div class="text-wrapper-3">for</div>
+      <div class="text-wrapper-4">HOPE</div>
+    </div>
+
+    <!-- Load p5.js và file JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="sketch.js"></script>
+  </body>
+</html>
